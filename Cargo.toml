@@ -1,0 +1,11 @@
+[package]
+name = "PollutionSensor"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = { version = "0.4.42", features = ["serde"] }
+rand = "0.10.0-rc.0"
+serde = { version = "1.0.228", features = ["derive"] }
+tokio = { version = "1.48.0", features = ["rt", "rt-multi-thread", "macros"] }
+reqwest = { version = "0.12.24", features = ["json"] }
