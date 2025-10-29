@@ -4,11 +4,10 @@ use serde::Serialize;
 
 
 const SENSOR_ID: i32 = 1;
-const URL: &str = "http://127.0.0.1:3000/reading";
+const URL: &str = "http://127.0.0.1:3000/sensors/ingest";
 
 #[derive(Debug, Serialize)]
 pub struct SensorReading {
-    id: i32,
     sensor_id: i32,
     timestamp: DateTime<Utc>, // ISO 8601 format
     co2: f32,
@@ -27,7 +26,6 @@ async fn main() {
         println!("Captured Co2 value: {}", co2);
 
         let reading = SensorReading {
-            id: 0,  // Ignored by backend
             sensor_id: SENSOR_ID,
             timestamp: Utc::now(),
             co2,
@@ -39,7 +37,7 @@ async fn main() {
         }
 
         // Sleep between readings
-        tokio::time::sleep(tokio::time::Duration::from_secs(2)).await;
+        tokio::time::sleep(tokio::time::Duration::from_secs(10)).await;
     }
 }
 
