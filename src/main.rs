@@ -2,9 +2,8 @@ use chrono::{DateTime, Utc};
 use rand::Rng;
 use serde::Serialize;
 
-
 const SENSOR_ID: i32 = 1;
-const URL: &str = "http://127.0.0.1:3000/sensors/ingest";
+const URL: &str = "https://127.0.0.1:3000/sensors/ingest";
 
 #[derive(Debug, Serialize)]
 pub struct SensorReading {
@@ -29,7 +28,7 @@ async fn main() {
             sensor_id: SENSOR_ID,
             timestamp: Utc::now(),
             co2,
-            temperature: 80.0 + (co2 - 100_000.0).abs() / 2000.0 // rough correlation,
+            temperature: 80.0 + (co2 - 100_000.0).abs() / 2000.0, // rough correlation,
         };
 
         if let Err(e) = client.post(URL).json(&reading).send().await {
@@ -40,5 +39,3 @@ async fn main() {
         tokio::time::sleep(tokio::time::Duration::from_secs(10)).await;
     }
 }
-
-
