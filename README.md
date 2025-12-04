@@ -1,4 +1,4 @@
-# Pollution Sensor Simulator
+# Pollution Tracker -  Sensor Simulator
 
 A Rust-based IoT sensor simulator that generates realistic pollution readings (CO2 levels and temperature) and sends them to the Pollution Tracker backend via HTTPS.
 
