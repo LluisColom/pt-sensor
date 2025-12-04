@@ -23,7 +23,7 @@ This simulator mimics a physical pollution monitoring sensor deployed at an indu
 
 1. Clone the repository (or navigate to the sensor directory):
 ```bash
-cd pollution-sensor-simulator
+cd pt-sensor
 ```
 
 2. Install dependencies:
