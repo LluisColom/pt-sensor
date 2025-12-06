@@ -21,8 +21,9 @@ This simulator mimics a physical pollution monitoring sensor deployed at an indu
 
 ## Installation
 
-1. Clone the repository (or navigate to the sensor directory):
+1. Clone the repository:
 ```bash
+git clone https://github.com/LluisColom/pt-sensor.git
 cd pt-sensor
 ```
 
